@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 ways to make an api call in JavaScript</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js" integrity="sha512-RjvSEaeDqPCfUVQ9kna2/2OqHz/7F04IOl1/66LmQjB/lOeAzwq7LrbTzDbz5cJzlPNJ5qteNtHR56XaJSTNWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+    <script>
+        // XHR (XMLHttpRequest) ------------------------------------------------------------------------------
+        const request = new XMLHttpRequest();
+        request.open('GET' , 'https://jsonplaceholder.typicode.com/users');
+        request.send();
+        request.onload = () => {
+            console.log(request)
+            if(request.status === 200){
+                console.log(JSON.parse(request.response));       
+            }else{
+                console.log(`error ${request.status}`)
+            }
+        }
+
+
+        //fetch api-------------------------------------------------------------------------------------------
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        // .then((responce) => {
+        //     return responce.json();
+        // }).then((data) => {
+        //     console.log(data);
+        // })
+
+
+        // async await -------------------------------------------------------------------------------------
+        // async function getUsers(){
+        //         let responce = await fetch('https://jsonplaceholder.typicode.com/users');
+        //         let data = await responce.json();
+        //         console.log(data);
+        // }
+        // getUsers();
+
+
+        // axios 
+        // axios.get('https://jsonplaceholder.typicode.com/users')
+        //     .then(responce => {
+        //         console.log(responce.data)
+        //     },err=>{
+        //          console.log(err)
+        //     } )
+    </script>
+</body>
+</html>

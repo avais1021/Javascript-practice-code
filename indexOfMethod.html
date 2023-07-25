@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indexOfMethod</title>
+</head>
+<body>
+    
+    <!-- how to array dublicate remove -->
+
+    <script>
+        const d = [];
+        const test = [
+            { a: 'a4', },
+            { a: 'a8', },
+            { a: 'a4', },
+            { a: 'a8', },
+        ]
+        console.log(test);
+        for (var i = 0; i < test.length; i++) {
+            var value = test[i].a.toUpperCase();
+            console.log(value);
+            if (d.indexOf(value) == -1) {
+                d.push(value);
+            }
+            console.log(d)
+        }
+    </script>
+</body>
+</html>
